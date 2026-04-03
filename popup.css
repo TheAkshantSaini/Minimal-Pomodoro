@@ -1,0 +1,163 @@
+:root {
+  --bg:  #2c2750; /* darker than #312C51 */
+  --surface: #1f1b38;
+  --glass: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.08);
+
+  --accent: #F0C38E;
+
+  --text: #f4f1ff;
+  --muted: #b8b4d6;
+}
+
+body {
+  margin: 0;
+  padding: 12px;
+  width: 300px;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Header */
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Circle */
+.circle-wrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 12px auto;
+}
+
+.progress-ring circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.progress-ring .bg {
+  stroke: rgba(255,255,255,0.1);
+}
+
+.progress-ring .progress {
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-dasharray: 471;
+  stroke-dashoffset: 471;
+  transition: stroke-dashoffset 1s linear;
+  filter: drop-shadow(0 0 6px rgba(240,195,142,0.5));
+}
+
+.time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Sliders */
+input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  margin: 6px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(240,195,142,0.6);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* Squircles */
+button {
+  flex: 1;
+  height: 50px;
+  border: none;
+  border-radius: 18px; /* squircle feel */
+  background: var(--surface);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Primary button */
+button.primary {
+  background: var(--accent);
+  color: #312C51;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(240,195,142,0.4);
+}
+
+/* Dropdown */
+select {
+  width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  border: none;
+  padding: 10px;
+  border-radius: 14px;
+  font-size: 13px;
+  outline: none;
+}
+
+/* Improve dropdown arrow visibility */
+select option {
+  background: #312C51;
+  color: white;
+}
+.circle-wrap {
+  animation: breathe 4s infinite ease-in-out;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

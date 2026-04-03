@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Focus</h1>
+  </div>
+
+  <!-- Timer Circle -->
+  <div class="circle-wrap">
+    <svg class="progress-ring" width="180" height="180">
+      <circle class="bg" cx="90" cy="90" r="75"></circle>
+      <circle class="progress" cx="90" cy="90" r="75"></circle>
+    </svg>
+    <div class="time" id="timer">25:00</div>
+  </div>
+
+  <!-- Focus -->
+  <div class="card">
+    <label>Focus</label>
+    <input type="range" id="focusTime" min="5" max="60" value="25">
+    <span id="focusLabel">25 min</span>
+  </div>
+
+  <!-- Break -->
+  <div class="card">
+    <label>Break</label>
+    <input type="range" id="breakTime" min="1" max="30" value="5">
+    <span id="breakLabel">5 min</span>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+  <button id="reset">⟲</button>
+  <button id="startPause" class="primary">▶</button>
+  <button id="skip">⏭</button>
+</div>
+
+
+  <!-- Sound -->
+  <div class="card small">
+    <select id="soundSelect">
+      <option value="sounds/bell.mp3">Bell</option>
+      <option value="sounds/chime.mp3">Chime</option>
+      <option value="sounds/digital.mp3">Digital</option>
+      <option value="sounds/soft.mp3">Soft</option>
+      <option value="custom">Custom...</option>
+    </select>
+  </div>
+
+  <!-- Hidden file input -->
+  <input type="file" id="customSound" accept="audio/*" style="display:none;">
+
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
